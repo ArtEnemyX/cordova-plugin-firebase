@@ -17,8 +17,13 @@ buildscript {
     }
 }
 
-apply plugin: 'io.fabric'
-apply plugin: 'com.google.gms.google-services'
+android {  
+  // other stuff here
+
+  project.ext {
+    googlePlayServicesVersion = "15.0.0"
+  }
+}
 
 repositories {
     mavenCentral()
@@ -48,3 +53,6 @@ cdvPluginPostBuildExtras.add({
     /*apply plugin: 'com.google.gms.google-services'
     apply plugin: 'io.fabric'*/
 })
+
+apply plugin: 'io.fabric'
+apply plugin: 'com.google.gms.google-services'
