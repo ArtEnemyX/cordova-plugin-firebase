@@ -1,20 +1,15 @@
 buildscript {
     repositories {
         jcenter()
-        mavenCentral()
+        google()
+        maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:+'
-        classpath 'com.google.gms:google-services:3.0.0'
+        classpath 'com.google.gms:google-services:4.2.0'
+        classpath 'io.fabric.tools:gradle:1.+'
     }
 }
-
-android {
-  project.ext {
-    googlePlayServicesVersion = "15.0.0"
-  }
-}
-
 repositories {
     mavenCentral()
     maven {
@@ -30,19 +25,6 @@ dependencies {
     }
 }
 
-cdvPluginPostBuildExtras.add({
-    /*afterEvaluate {
-        rootProject.subprojects {
-            if (name == "app") {
-                if (!plugins.hasPlugin('com.google.gms.google-services')) {
-                    apply plugin: com.google.gms.googleservices.GoogleServicesPlugin
-                }
-            }
-        }
-    }*/
-    apply plugin: 'com.google.gms.google-services'
-    apply plugin: 'io.fabric'
-})
-
-/*apply plugin: 'io.fabric'
-apply plugin: 'com.google.gms.google-services'*/
+apply plugin: com.google.gms.googleservices.GoogleServicesPlugin
+apply plugin: com.crashlytics.tools.gradle.CrashlyticsPlugin
+com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
