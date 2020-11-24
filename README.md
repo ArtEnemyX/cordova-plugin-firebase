@@ -3,6 +3,14 @@
 # cordova-plugin-firebase
 This plugin brings push notifications, analytics, event tracking, crash reporting and more from Google Firebase to your Cordova project!  Android and iOS supported.
 
+## This is fork
+
+Desc: Error on PGB when creating android app: 
+```
+Plugin with id 'com.google.gms.google-services' not found.
+```
+was fixed only by edit file: ../src/android/build.gradle
+
 ## Supported Cordova Versions
 - cordova: `>= 6`
 - cordova-android: `>= 6.4`
