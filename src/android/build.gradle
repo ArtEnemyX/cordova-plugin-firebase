@@ -3,19 +3,13 @@ buildscript {
         jcenter()
         mavenCentral()
     }
-    /*dependencies {
+    dependencies {
         classpath 'com.android.tools.build:gradle:+'
         classpath 'com.google.gms:google-services:3.0.0'
-    }*/
-    dependencies {
-        classpath 'io.fabric.tools:gradle:1.25.4'
-        classpath 'com.google.gms:google-services:+'
     }
 }
 
-android {  
-  // other stuff here
-
+android {
   project.ext {
     googlePlayServicesVersion = "15.0.0"
   }
@@ -46,9 +40,9 @@ cdvPluginPostBuildExtras.add({
             }
         }
     }*/
-    /*apply plugin: 'com.google.gms.google-services'
-    apply plugin: 'io.fabric'*/
+    apply plugin: 'com.google.gms.google-services'
+    apply plugin: 'io.fabric'
 })
 
-apply plugin: 'io.fabric'
-apply plugin: 'com.google.gms.google-services'
+/*apply plugin: 'io.fabric'
+apply plugin: 'com.google.gms.google-services'*/
